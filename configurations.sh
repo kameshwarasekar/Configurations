@@ -5,11 +5,11 @@ rc=(".zshrc" ".vimrc" ".antigenrc" ".tmux.conf")
 
 for i in ${config[@]}; do
   echo ${i};
-  ln -sf  ~/.config/${i} ./${i};
+  cp -r  ~/.config/${i}/ ./${i}/;
 done
 
 for i in ${rc[@]}; do
   echo ${i}
-  ln -sf ~/${i} ./${i};
+  cp ~/${i} ./${i};
 done
 
