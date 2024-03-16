@@ -13,3 +13,4 @@ for i in ${rc[@]}; do
   cp ~/${i} ./${i};
 done
 
+rm -rf ./alacritty/themes/.git

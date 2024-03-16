@@ -1,0 +1,16 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/kamesh/Documents/workspace/learn_rust/guessing_game
+- /home/kamesh/Documents/workspace/leetcode
+- /home/kamesh/Documents/workspace/Configurations
+- /home/kamesh/Documents/workspace/advent_of_code
+startuppopupversion: 5
+customcommandshistory:
+- git remote add origin git@github.com:kameshwarasekar/leetcode.git
+- q
+- git remote add origin git@github.com:kameshwarasekar/Configurations.git
+- git push -u origin main
+- git branch -M main
+- w
+hidecommandlog: false
+ignorewhitespaceindiffview: false
