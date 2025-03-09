@@ -1,12 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-# export DISPLAY=:0 # in WSL 1
-# ==> (by kamesh) updated this for xclip to work
-# export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):1 
-export DISPLAY=:1
+export DISPLAY=:0 # in WSL 1
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0 # in WSL 2
 export LIBGL_ALWAYS_INDIRECT=1
 
 #Theme set in antigen
@@ -87,8 +85,7 @@ ZSH_THEME="spaceship"
 #plugins=(git)
 #plugins=(zsh-autosuggestions)
 #plugins=(z zsh-autosuggestions)
-#plugins=(git z zsh-autosuggestions)
-
+plugins=(git z zsh-autosuggestions zsh-history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -123,10 +120,73 @@ function acp() {
 }
 source ~/antigen.zsh
 antigen init ~/.antigenrc
+export PATH=/home/ksekar/Documents/workspace:$PATH
 
-export PATH=$PATH:/home/kamesh/.local/lib/python3.12/site-packages/black
-export PATH=$PATH:/home/kamesh/.local/lib/python3.12/site-packages/pyright
-export PATH=$PATH:/home/ksekar/.local/lib/python3.12/site-packages/python-lsp-ruff
-export PATH=$PATH:~/.cargo/bin
-export PATH=$PATH:~/.local/bin
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+
+# Restart your shell for the changes to take effect.
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+
+#eval "$(pyenv virtualenv-init -)"
+#export PATH=/usr/bin/pip:$PATH
+
+source <(kubectl completion zsh)  # setup autocomplete in zsh
+alias kg="kubectl get"
+alias kgo="kubectl get -oyaml"
+alias kd="kubectl describe"
+alias klog="kubectl log"
+export PATH=/home/Downloads/shipwright_0.30.2-debian_amd64:$PATH
+export PATH=$PATH:/home/ksekar/.local/lib/python3.10/site-packages/pyright/
+alias xclip='wl-copy'
+alias xsel='wl-copy'
+export EDITOR=hx
+export VISUAL=hx
+export TERM=xterm-256color
+export FLINK_HOME=/opt/flink
+export PATH=$FLINK_HOME/bin:$PATH
+# fzf key bindings
+if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
+
+# fzf autocompletion
+if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
+  source /usr/share/doc/fzf/examples/completion.zsh
+fi
+
+
+# Custom widget to confirm execution if command contains "prod"
+function confirm_command() {
+  if [[ $BUFFER == *prod* ]]; then
+    # Print the warning on a new line with red text
+    echo -e "\n\033[31mWARNING:\033[0m The command contains 'prod'. Are you sure you want to execute it? [y/N] "
+    read -k1 answer
+    echo
+    if [[ $answer != [Yy] ]]; then
+      # Cancel command execution by resetting the prompt
+      zle reset-prompt
+      return 1
+    fi
+  fi
+  # Execute the command if no "prod" found or confirmation given
+  zle accept-line
+}
+
+# Register the widget with zle
+zle -N confirm_command
+
+# Bind the widget to Enter
+bindkey '^M' confirm_command
+
+# Bind the widget to Control+Enter (replace with your terminal's actual sequence if different)
+bindkey '^[[13;5u' confirm_command
+
+# Ensure fzf key bindings are loaded (adjust this path if necessary)
+if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
+
