@@ -1,0 +1,112 @@
+# Atom Inspired Dark Reddish Theme for Helix
+# A refined dark theme with enhanced reddish accents, inspired by Atom Editor’s homepage.
+# Designed to provide clear contrast and a modern look with a strong red vibe.
+
+"comment"         = { fg = "atom_comment" }
+"constant"        = { fg = "atom_constant" }
+"function"        = { fg = "atom_function" }
+"function.macro"  = { fg = "atom_function" }
+"keyword"         = { fg = "atom_keyword" }
+"operator"        = { fg = "atom_operator" }
+"punctuation"     = { fg = "atom_fg" }
+"string"          = { fg = "atom_string" }
+"type"            = { fg = "atom_type" }
+"variable"        = { fg = "atom_fg" }
+"variable.builtin"= { fg = "atom_builtin" }
+"tag"             = { fg = "atom_tag" }
+"label"           = { fg = "atom_tag" }
+"attribute"       = { fg = "atom_attribute" }
+"namespace"       = { fg = "atom_fg" }
+"module"          = { fg = "atom_fg" }
+
+"markup.heading"        = { fg = "atom_fg", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "atom_keyword" }
+"markup.list"           = { fg = "atom_keyword" }
+"markup.bold"           = { modifiers = ["bold"] }
+"markup.italic"         = { modifiers = ["italic"] }
+"markup.strikethrough"  = { modifiers = ["crossed_out"] }
+"markup.link.url"       = { fg = "atom_builtin", modifiers = ["underlined"] }
+"markup.link.text"      = { fg = "atom_builtin" }
+"markup.quote"          = { fg = "atom_comment" }
+"markup.raw"            = { fg = "atom_fg" }
+
+"ui.background"         = { bg = "atom_bg" }
+"ui.cursor"             = { fg = "atom_bg", bg = "atom_cursor" }
+"ui.cursor.match"       = { fg = "atom_bg", bg = "atom_cursor_match" }
+"ui.cursor.select"      = { fg = "atom_bg", bg = "atom_cursor_select" }
+"ui.cursor.insert"      = { fg = "atom_bg", bg = "atom_cursor_insert" }
+"ui.linenr"             = { fg = "atom_linenr" }
+"ui.linenr.selected"    = { fg = "atom_linenr_selected" }
+"ui.cursorline"         = { fg = "atom_fg", bg = "atom_cursorline_bg" }
+"ui.statusline"         = { fg = "atom_statusline_fg", bg = "atom_statusline_bg" }
+"ui.statusline.inactive"= { fg = "atom_statusline_inactive_fg", bg = "atom_statusline_inactive_bg" }
+"ui.statusline.normal"  = { fg = "atom_statusline_fg", bg = "atom_statusline_bg" }
+"ui.statusline.insert"  = { fg = "atom_statusline_fg", bg = "atom_statusline_insert_bg" }
+"ui.statusline.select"  = { fg = "atom_statusline_fg", bg = "atom_statusline_select_bg" }
+"ui.popup"              = { fg = "atom_popup_fg", bg = "atom_popup_bg" }
+"ui.window"             = { fg = "atom_fg", bg = "atom_bg" }
+"ui.help"               = { fg = "atom_fg", bg = "atom_popup_bg" }
+"ui.text"               = { fg = "atom_fg" }
+"ui.text.focus"         = { fg = "atom_fg" }
+"ui.menu"               = { fg = "atom_fg", bg = "atom_popup_bg" }
+"ui.menu.selected"      = { fg = "atom_bg", bg = "atom_accent" }
+"ui.selection"          = { bg = "atom_selection" }
+"ui.virtual.whitespace" = { fg = "atom_comment" }
+"ui.virtual.ruler"      = { bg = "atom_bg_darker" }
+"ui.virtual.indent-guide" = { fg = "atom_bg_darker" }
+"ui.virtual.inlay-hint"   = { fg = "atom_comment" }
+
+"diff.plus"         = { fg = "atom_diff_plus" }
+"diff.delta"        = { fg = "atom_diff_delta" }
+"diff.minus"        = { fg = "atom_diff_minus" }
+
+"error"             = { fg = "atom_error" }
+"warning"           = { fg = "atom_warning" }
+"info"              = { fg = "atom_info" }
+"hint"              = { fg = "atom_hint" }
+
+"diagnostic.warning" = { underline = { color = "atom_warning", style = "curl" } }
+"diagnostic.error"   = { underline = { color = "atom_error", style = "curl" } }
+"diagnostic.info"    = { underline = { color = "atom_info", style = "curl" } }
+"diagnostic.hint"    = { underline = { color = "atom_hint", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated"  = { modifiers = ["crossed_out"] }
+
+[palette]
+atom_bg                  = "#282C34"   # Dark background
+atom_bg_darker           = "#21252B"   # For virtual rulers, indent guides
+atom_fg                  = "#ABB2BF"   # Light grey text
+atom_comment             = "#5C6370"   # Muted grey for comments
+atom_keyword             = "#E06C75"   # Rich red for keywords
+atom_constant            = "#D19A66"   # Warm orange for constants
+atom_string              = "#98C379"   # Green for strings
+atom_type                = "#E5C07B"   # Yellowish for types
+atom_function            = "#61AFEF"   # Blue for functions
+atom_operator            = "#E06C75"   # Red for operators
+atom_builtin             = "#56B6C2"   # Cyan for built-ins
+atom_tag                 = "#E06C75"   # Red for tags/labels
+atom_attribute           = "#E06C75"   # Red for attributes
+atom_cursor              = "#FF5555"   # Bright red cursor
+atom_cursor_match        = "#3E4451"
+atom_cursor_select       = "#3E4451"
+atom_cursor_insert       = "#E06C75"   # Red in insert mode
+atom_linenr              = "#636D83"
+atom_linenr_selected     = "#ABB2BF"
+atom_cursorline_bg       = "#2C313C"
+atom_statusline_fg       = "#ABB2BF"
+atom_statusline_bg       = "#21252B"
+atom_statusline_inactive_fg = "#5C6370"
+atom_statusline_inactive_bg = "#282C34"
+atom_statusline_insert_bg  = "#E06C75"   # Red for insert mode
+atom_statusline_select_bg  = "#E06C75"   # Red for selection mode
+atom_popup_fg            = "#ABB2BF"
+atom_popup_bg            = "#21252B"
+atom_accent              = "#FF5555"   # Accent for menu selections
+atom_selection           = "#3E4451"   # Dark blueish selection highlight
+atom_diff_plus           = "#98C379"   # Green for additions
+atom_diff_delta          = "#D19A66"   # Orange for changes
+atom_diff_minus          = "#E06C75"   # Red for deletions
+atom_error               = "#E06C75"
+atom_warning             = "#E5C07B"
+atom_info                = "#56B6C2"
+atom_hint                = "#98C379"
