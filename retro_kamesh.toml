@@ -1,0 +1,157 @@
+
+# Tamil Retro Mocha Theme for Helix
+# A super polished, dark theme with retro Tamil vibes and warm mocha tones.
+# Designed to provide excellent contrast and clear differentiation of code elements.
+
+"comment"         = { fg = "mocha_comment" }
+"constant"        = { fg = "mocha_constant" }
+"function"        = { fg = "mocha_function" }
+"function.macro"  = { fg = "mocha_macro" }
+"keyword"         = { fg = "mocha_keyword" }
+"operator"        = { fg = "mocha_operator" }
+"punctuation"     = { fg = "mocha_punctuation" }
+"string"          = { fg = "mocha_string" }
+"type"            = { fg = "mocha_type" }
+"variable"        = { fg = "mocha_variable" }
+"variable.builtin"= { fg = "mocha_builtin" }
+"tag"             = { fg = "mocha_tag" }
+"label"           = { fg = "mocha_label" }
+"attribute"       = { fg = "mocha_attribute" }
+"namespace"       = { fg = "mocha_namespace" }
+"module"          = { fg = "mocha_module" }
+
+"markup.heading"        = { fg = "mocha_heading", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "mocha_heading_marker" }
+"markup.list"           = { fg = "mocha_list" }
+"markup.bold"           = { modifiers = ["bold"] }
+"markup.italic"         = { modifiers = ["italic"] }
+"markup.strikethrough"  = { modifiers = ["crossed_out"] }
+"markup.link.url"       = { fg = "mocha_link", modifiers = ["underlined"] }
+"markup.link.text"      = { fg = "mocha_link" }
+"markup.quote"          = { fg = "mocha_quote" }
+"markup.raw"            = { fg = "mocha_raw" }
+
+"ui.background"         = { bg = "mocha_bg" }
+"ui.cursor"             = { fg = "mocha_bg", bg = "mocha_cursor" }
+"ui.cursor.match"       = { fg = "mocha_bg", bg = "mocha_cursor_match" }
+"ui.cursor.select"      = { fg = "mocha_bg", bg = "mocha_cursor_select" }
+"ui.cursor.insert"      = { fg = "mocha_bg", bg = "mocha_cursor_insert" }
+"ui.linenr"             = { fg = "mocha_linenr" }
+"ui.linenr.selected"    = { fg = "mocha_linenr_selected" }
+"ui.cursorline"         = { fg = "mocha_cursorline_fg", bg = "mocha_cursorline_bg" }
+"ui.statusline"         = { fg = "mocha_statusline_fg", bg = "mocha_statusline_bg" }
+"ui.statusline.inactive"= { fg = "mocha_statusline_inactive_fg", bg = "mocha_statusline_inactive_bg" }
+"ui.statusline.normal"  = { fg = "mocha_statusline_fg", bg = "mocha_statusline_bg" }
+"ui.statusline.insert"  = { fg = "mocha_statusline_fg", bg = "mocha_statusline_insert_bg" }
+"ui.statusline.select"  = { fg = "mocha_statusline_fg", bg = "mocha_statusline_select_bg" }
+"ui.popup"              = { fg = "mocha_popup_fg", bg = "mocha_popup_bg" }
+"ui.window"             = { fg = "mocha_window_fg", bg = "mocha_bg" }
+"ui.help"               = { fg = "mocha_help_fg", bg = "mocha_popup_bg" }
+"ui.text"               = { fg = "mocha_text_fg" }
+"ui.text.focus"         = { fg = "mocha_text_focus_fg" }
+"ui.menu"               = { fg = "mocha_menu_fg", bg = "mocha_menu_bg" }
+"ui.menu.selected"      = { fg = "mocha_menu_selected_fg", bg = "mocha_menu_selected_bg" }
+"ui.selection"          = { bg = "mocha_selection_bg" }
+"ui.virtual.whitespace" = { fg = "mocha_virtual_whitespace" }
+"ui.virtual.ruler"      = { bg = "mocha_virtual_ruler" }
+"ui.virtual.indent-guide" = { fg = "mocha_virtual_indent_guide" }
+"ui.virtual.inlay-hint"   = { fg = "mocha_virtual_inlay_hint" }
+"ui.virtual.jump-label" = { fg = "#00dfff", modifiers = ["bold"] }  # Added for goto word highlighting
+
+"diff.plus"         = { fg = "mocha_diff_plus" }
+"diff.delta"        = { fg = "mocha_diff_delta" }
+"diff.minus"        = { fg = "mocha_diff_minus" }
+
+"error"             = { fg = "mocha_error" }
+"warning"           = { fg = "mocha_warning" }
+"info"              = { fg = "mocha_info" }
+"hint"              = { fg = "mocha_hint" }
+
+"diagnostic.warning"  = { underline = { color = "mocha_diagnostic_warning", style = "curl" } }
+"diagnostic.error"    = { underline = { color = "mocha_diagnostic_error", style = "curl" } }
+"diagnostic.info"     = { underline = { color = "mocha_diagnostic_info", style = "curl" } }
+"diagnostic.hint"     = { underline = { color = "mocha_diagnostic_hint", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated"  = { modifiers = ["crossed_out"] }
+
+[palette]
+# Base & Background
+mocha_bg                    = "#2C2A26"  # Dark mocha background
+mocha_text_fg               = "#D9C7A6"  # Creamy foreground
+
+# Syntax Colours
+mocha_comment               = "#A38C75"  # Muted brown for comments
+mocha_constant              = "#E9C46A"  # Warm gold
+mocha_function              = "#2A9D8F"  # Teal-green for functions
+mocha_macro                 = "#8E5572"  # Dusty mauve for macros
+mocha_keyword               = "#E76F51"  # Bold red for keywords
+mocha_operator              = "#E76F51"  # Same as keywords
+mocha_punctuation           = "#D9C7A6"  # Creamy to match text
+mocha_string                = "#F07B61"  # Slightly more reddish for strings
+mocha_type                  = "#F06E6E"  # Vibrant red for class names, adjusted for readability
+mocha_variable              = "#D9C7A6"  # Creamy for variables
+mocha_builtin               = "#457B9D"  # Cool blue for built-ins
+mocha_tag                   = "#D9A066"  # Warm copper for tags
+mocha_label                 = "#D9A066"  # Same as tags
+mocha_attribute             = "#8E5572"  # Dusty mauve for attributes
+mocha_namespace             = "#9A8B7E"  # Muted, warm grey for namespaces
+mocha_module                = "#9A8B7E"  # Same as namespace
+
+# Markup & Links
+mocha_heading               = "#D9C7A6"  # Creamy for headings
+mocha_heading_marker        = "#E76F51"  # Bold red markers
+mocha_list                  = "#F4A261"  # Warm orange for lists
+mocha_link                  = "#2A9D8F"  # Teal-green for links
+mocha_quote                 = "#A38C75"  # Muted brown for quotes
+mocha_raw                   = "#F4A261"  # Warm orange for raw blocks
+
+# UI & Cursor
+mocha_cursor                = "#F4A261"  # Warm orange for cursor
+mocha_cursor_match          = "#E76F51"  # Red for cursor match
+mocha_cursor_select         = "#2A9D8F"  # Teal-green for selection cursor
+mocha_cursor_insert         = "#F4A261"  # Warm orange for insert mode
+mocha_linenr                = "#5A5247"  # Muted brown for line numbers
+mocha_linenr_selected       = "#E9C46A"  # Warm gold for selected line numbers
+mocha_cursorline_bg         = "#39342F"  # Slightly lighter than background
+mocha_cursorline_fg         = "#D9C7A6"  # Creamy text on cursor line
+
+# Statusline & Popup
+mocha_statusline_fg         = "#D9C7A6"  # Creamy text for statusline
+mocha_statusline_bg         = "#3A352E"  # Dark brown for statusline background
+mocha_statusline_inactive_fg= "#5A5247"  # Muted for inactive statusline
+mocha_statusline_inactive_bg= "#2C2A26"  # Same as background
+mocha_statusline_insert_bg  = "#2A9D8F"  # Teal-green for insert mode
+mocha_statusline_select_bg  = "#E76F51"  # Red for selection mode
+mocha_popup_fg              = "#D9C7A6"  # Creamy for popup text
+mocha_popup_bg              = "#39342F"  # Dark brown for popups
+mocha_window_fg             = "#D9C7A6"  # Creamy text in windows
+mocha_help_fg               = "#D9C7A6"  # Creamy text for help
+
+# Text & Menus
+mocha_text_focus_fg         = "#F07B61"  # Now more reddish for focused text
+mocha_menu_fg               = "#D9C7A6"  # Creamy for menu text
+mocha_menu_bg               = "#39342F"  # Dark brown for menus
+mocha_menu_selected_fg      = "#2C2A26"  # Dark for contrast on selection
+mocha_menu_selected_bg      = "#E76F51"  # Red for selected menu items
+mocha_selection_bg          = "#6E5B4F"  # Adjusted for a clearer distinction from cursorline
+
+# Virtual & Indent Guides
+mocha_virtual_whitespace    = "#5A5247"
+mocha_virtual_ruler         = "#3A352E"
+mocha_virtual_indent_guide  = "#5A5247"
+mocha_virtual_inlay_hint    = "#A38C75"
+
+# Diff
+mocha_diff_plus             = "#2A9D8F"  # Teal-green for additions
+mocha_diff_delta            = "#E9C46A"  # Warm gold for changes
+mocha_diff_minus            = "#E76F51"  # Red for deletions
+
+# Diagnostics
+mocha_error                 = "#E76F51"
+mocha_warning               = "#F4A261"
+mocha_info                  = "#2A9D8F"
+mocha_hint                  = "#E9C46A"
+mocha_diagnostic_warning    = "#F4A261"
+mocha_diagnostic_error      = "#E76F51"
+mocha_diagnostic_info       = "#2A9D8F"
+mocha_diagnostic_hint       = "#E9C46A"
