@@ -1,0 +1,72 @@
+theme = "retro_kamesh" 
+[editor]
+# mouse = false
+shell = ["zsh", "-cu"]
+line-number = "relative"
+preview-completion-insert = true
+bufferline = "always"
+cursorline = true
+completion-timeout = 150
+color-modes = true
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "spinner"]
+center = ["file-name"]  
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.indent-guides]
+character = "⸽" # Some characters that work well: "▏", "┆", "┊", "⸽"
+render = true
+
+[editor.whitespace.render]
+tab = "all"
+tabpad = "all"
+newline = "none"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+after-delay.timeout = 3000
+
+
+[editor.inline-diagnostics]
+cursor-line	= "hint"
+# other-lines = "warning"
+
+
+[keys.normal]
+y = "yank_main_selection_to_clipboard" 
+p = "paste_clipboard_before"  
+"esc" = ["collapse_selection", ":w"]
+# Add a new line above and enter normal mode
+"ret" = ["goto_word"]
+"A-s" = "save_selection"
+i = "move_visual_line_up"
+k = "move_visual_line_down"
+j = "move_char_left"
+l = "move_char_right"
+I = ["insert_mode"]
+# [editor.soft-wrap]
+# enable = true
+
+[keys.insert]
+j = { k = ["normal_mode", ":w"] }
+
+[keys.select]
+y = "yank_main_selection_to_clipboard" 
+p = "paste_clipboard_before" 
+
