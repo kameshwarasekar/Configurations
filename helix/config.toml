@@ -1,89 +1,81 @@
-# theme = "everforest_dark_transparent" # custom theme
-theme = "everforest_light_kamesh"
-# theme = "everforest_dark_hc"
-
-# Setting up basic editor config:
-# + shell : default shell
-# + auto-save : save when editor loses focus
-# + preview-completion-insert : view completed previews for suggestions
-# + bufferline :
-# + mouse :  enable or diable mouse 
-# + line-number : line number type, absolute or relative
+theme = "retro_kamesh" 
 [editor]
 # mouse = false
 shell = ["zsh", "-cu"]
-# line-number = "relative"
-auto-save = true
+line-number = "relative"
 preview-completion-insert = true
 bufferline = "always"
+cursorline = true
+completion-timeout = 150
+color-modes = true
 
-# Editor statusline (bottom-line) settings:
-# + mode.* : word to display in each mode
-# + center, left, right : properties to show in location 
 [editor.statusline]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-center = ["version-control"]
-left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+left = ["mode", "spinner"]
+center = ["file-name"]  
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 
-# Editor indent settings:
-# + character : symbol for indent guides
-# + render : whether to render the indent-guide
 [editor.indent-guides]
 character = "⸽" # Some characters that work well: "▏", "┆", "┊", "⸽"
 render = true
 
-# Whitespace settings and symbols
-# + (*whiteline) types : when to render
 [editor.whitespace.render]
 tab = "all"
 tabpad = "all"
 newline = "none"
 
-# Editor lsp settings
-# + display-inlay-hints : enable or disable iinlay hints(should also be enabled in LSP config in lanugauges.toml)
 [editor.lsp]
 display-inlay-hints = true
 
-# Editor cursor shape settings, change cursor shapes in modes
-# + (*modes) : cursor shape option (bar, block and underline)
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
-# Editor filepicker settings
-# + hidden : show hidden files
 [editor.file-picker]
 hidden = false
 
-# Modified keybinding in Normal mode
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+after-delay.timeout = 3000
+
+
+[editor.inline-diagnostics]
+cursor-line	= "hint"
+# other-lines = "warning"
+
+
 [keys.normal]
-"C-s" = ":w" # Ctrl-s saves the current file 
-# left = "no_op"
-# right = "no_op"
-down = "no_op" # disable down arrow
-up = "no_op" # disable up arrow
-y = "yank_main_selection_to_clipboard" # y yanks selection to clipboard
-p = "paste_clipboard_before" # p pastes clipboard before 
-
+y = "yank_main_selection_to_clipboard" 
+p = "paste_clipboard_before"  
+"esc" = ["collapse_selection", ":w"]
 # Add a new line above and enter normal mode
-"ret" = ["open_below", "normal_mode"] # Enter adds line above
+"ret" = ["goto_word"]
+"A-s" = "save_selection"
+i = "move_visual_line_up"
+k = "move_visual_line_down"
+j = "move_char_left"
+l = "move_char_right"
+I = ["insert_mode"]
+C-left = "move_prev_word_start"
+C-right = "move_next_word_start"
+C-up = "move_line_up"
+C-down = "move_line_down"
 
-# Modified keybindings in Insert mode
+# [editor.soft-wrap]
+# enable = true
+
 [keys.insert]
-# left = "no_op"
-# right = "no_op"
-down = "no_op" # disable down arrow
-up = "no_op" # disable up arrow
-"A-h" = "move_char_left" # Alt-h moves cursor up
-"A-l" = "move_char_right" # Alt-l moves cursor right
-"A-k" = "move_line_up" # Alt-k moves cursor up
-"A-j" = "move_line_down" # Alt-j moves cursor down
-j = { k = "normal_mode" } # jk to enter Normal mode
+j = { k = ["normal_mode", ":w"] }
+C-left = "move_prev_word_start"
+C-right = "move_next_word_start"
+C-up = "move_line_up"
+C-down = "move_line_down"
 
-# Modified keybindings in select/extend mode
 [keys.select]
-y = "yank_main_selection_to_clipboard" # y yanks selection to clipboard
-p = "paste_clipboard_before" # p pastes clipboard before
+y = "yank_main_selection_to_clipboard" 
+p = "paste_clipboard_before" 
+
