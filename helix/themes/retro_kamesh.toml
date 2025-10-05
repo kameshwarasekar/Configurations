@@ -1,3 +1,4 @@
+
 # Tamil Retro Mocha Theme for Helix
 # A super polished, dark theme with retro Tamil vibes and warm mocha tones.
 # Designed to provide excellent contrast and clear differentiation of code elements.
@@ -55,6 +56,7 @@
 "ui.virtual.ruler"      = { bg = "mocha_virtual_ruler" }
 "ui.virtual.indent-guide" = { fg = "mocha_virtual_indent_guide" }
 "ui.virtual.inlay-hint"   = { fg = "mocha_virtual_inlay_hint" }
+"ui.virtual.jump-label" = { fg = "#00dfff", modifiers = ["bold"] }  # Added for goto word highlighting
 
 "diff.plus"         = { fg = "mocha_diff_plus" }
 "diff.delta"        = { fg = "mocha_diff_delta" }
@@ -85,7 +87,7 @@ mocha_macro                 = "#8E5572"  # Dusty mauve for macros
 mocha_keyword               = "#E76F51"  # Bold red for keywords
 mocha_operator              = "#E76F51"  # Same as keywords
 mocha_punctuation           = "#D9C7A6"  # Creamy to match text
-mocha_string                = "#F07B61"  # Slightly more reddish than before for strings
+mocha_string                = "#F07B61"  # Slightly more reddish for strings
 mocha_type                  = "#F06E6E"  # Vibrant red for class names, adjusted for readability
 mocha_variable              = "#D9C7A6"  # Creamy for variables
 mocha_builtin               = "#457B9D"  # Cool blue for built-ins
@@ -131,7 +133,7 @@ mocha_menu_fg               = "#D9C7A6"  # Creamy for menu text
 mocha_menu_bg               = "#39342F"  # Dark brown for menus
 mocha_menu_selected_fg      = "#2C2A26"  # Dark for contrast on selection
 mocha_menu_selected_bg      = "#E76F51"  # Red for selected menu items
-mocha_selection_bg          = "#4A4238"  # Slightly lighter brown for selection
+mocha_selection_bg          = "#6E5B4F"  # Adjusted for a clearer distinction from cursorline
 
 # Virtual & Indent Guides
 mocha_virtual_whitespace    = "#5A5247"
