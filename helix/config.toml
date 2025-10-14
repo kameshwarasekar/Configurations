@@ -8,14 +8,15 @@ bufferline = "always"
 cursorline = true
 completion-timeout = 150
 color-modes = true
+# automic-save = true
 
 [editor.statusline]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-left = ["mode", "spinner"]
-center = ["file-name"]  
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+left = ["mode", "spacer", "spinner", "file-modification-indicator", "spacer", "version-control"]
+center = ["file-name", "spacer", "spinner", "file-absolute-path"]  
+right = ["diagnostics", "selections", "position", "total-line-numbers", "position-percentage", "file-encoding", "file-line-ending", "file-type", "read-only-indicator", "register"]
 
 [editor.indent-guides]
 character = "⸽" # Some characters that work well: "▏", "┆", "┊", "⸽"
@@ -28,6 +29,8 @@ newline = "none"
 
 [editor.lsp]
 display-inlay-hints = true
+auto-signature-help = false
+display-progress-messages = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -47,11 +50,14 @@ after-delay.timeout = 3000
 cursor-line	= "hint"
 # other-lines = "warning"
 
+# [editor.gutters]
+# layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
 
 [keys.normal]
 y = "yank_main_selection_to_clipboard" 
 p = "paste_clipboard_before"  
-"esc" = ["collapse_selection", ":w"]
+"esc" = ["collapse_selection", "keep_primary_selection", ":w"]
 # Add a new line above and enter normal mode
 "ret" = ["goto_word"]
 "A-s" = "save_selection"
@@ -64,6 +70,8 @@ C-left = "move_prev_word_start"
 C-right = "move_next_word_start"
 C-up = "move_line_up"
 C-down = "move_line_down"
+"C-l" = ":sh zellij run -f -x 5%% -y 5%% --width 90%% --height 90%% -- sh -c 'lazygit && zellij action close-pane'"
+"C-p" = "signature_help"
 
 # [editor.soft-wrap]
 # enable = true
@@ -78,4 +86,3 @@ C-down = "move_line_down"
 [keys.select]
 y = "yank_main_selection_to_clipboard" 
 p = "paste_clipboard_before" 
-
